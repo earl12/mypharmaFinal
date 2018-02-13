@@ -1,0 +1,52 @@
+{
+  "scn": "2431",
+  "budget": "1000",
+  "barangay_id": "1",
+  "first_name": "masdop",
+  "middle_name": "asopdkao",
+  "last_name": "sdkaldm",
+  "gender": "Male",
+  "dob": "12-31-3123",
+  "address": "Lahug, Cebu City, Philippines",
+  "telephone": "(123) 123-1312",
+  "mobile": "(131) 323-1313",
+  "lat": "10.3338299",
+  "lng": "123.89414340000008",
+  "genetic_condition": "sada",
+  "current_symptom": "adsa",
+  "taking_medication": "1",
+  "medication_allergies": "1",
+  "tobacca_user": "1",
+  "illegaldrug_user": "1",
+  "mv": "1",
+  "mt": "Aciclovir"
+}
+
+
+
+
+
+These data are needed for transporting chunks of information back to the server 
+
+1. To get the deliveries information for the current day..
+{
+  
+  couriers_name => Courier Name : Mike Jones,
+  dosages_reference_id => 1,
+  dosages.form => Tablet
+  dosage_name => 30mg
+  medicine_name => Captopril
+  medicine_classes.name => Heart Disease & High Blood Pressure..
+  senior_citizens.id => 3302
+  senior_citizens.first_name : Jaime
+  senior_citizens.last_name : Lannister, 
+  senior_citizens_rosters.lat  : 10.302031 , 
+  senior_citizens_rosters.lng  : 123.939929 ,
+  senior_citizens.barangays.lat as barangay_hall_lat : 10.301023,
+  senior_citizens.barangays.lng as barangay_hall_lng : 123.93244921,
+  senior_citizens.complete_address_name : 129392 Molave St. Cebu City,
+  senior_citizens.contact_number : 09327473899, 
+  current_location.lat : 10.304120, 
+  current_location.lng : 127.300241
+
+}

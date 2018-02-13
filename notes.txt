@@ -1,0 +1,532 @@
+--------------------------------------------------------------------------------------------------------------------------------
+Status CODES : 
+--------------------------------------------------------------------------------------------------------------------------------
+Delivery Status Codes : 
+
+101 - Delivered 
+102 - Undelivered
+103 - Pending 
+104 - Left Warehouse
+
+
+
+parcel_status_codes
+
+201- Subtracted to 1000.
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Tasks : 
+
+
+
+---- ADMIN ----
+
+1. MEMBER Addition / Deletion /  Updating ( REALTIME )
+
+2. MEMBER BROWSE PROFILE
+
+Profile Page..
+
+
+show the picture of the barangay.. 
+
+
+all the location information..
+
+
+contact number.. 
+
+
+
+
+3. SHOW TRANSACTIONS IN REALTIME
+
+
+
+-- system TASKS -- 
+
+
+Run Every Night at 9pm.  SEND SMS FOR ALL SENIOR CITIZENS where delivery_date == tomorrow..
+
+
+
+
+--- COURIER ---
+
+
+
+1. Checking todays delivery..
+> Initialize Map to the current location of the user.
+
+> If the user sets to the current location lock it and remember the location.. Save it as a start location..
+
+We can use realtime maps here.. 
+
+> 
+
+2. Create a control wherein to locate back to the current location.. 
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+FINISHED TASKS 
+
+
+
+
+
+
+
+Relationships : 
+
+1. A senior_citizen have one to many order.
+
+2. An order belongs to only one senior_citizen.
+
+3. An order has only one courier
+
+4. A courier can have many or multiple orders.. 
+
+5. An order can have many product
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+----------- - REALTIME TRANSACTIONS ---------
+
+
+
+1. Data entry ( BREAD ). 
+
+>  When A User is added. -> [ ] MemberAdded
+>  When a medicine is added -> [ ] Medicineadded
+>   When a Barangay is added [ ] Barangay ADDED .. 
+
+
+
+
+
+
+2. When a parcel has been delivered.. THEN ..   ====>  Update the administrators dashboard realtime..  
+
+====>reports will be delivered to the admin..
+
+
+
+//->> Earl's part => Social Workers
+
+
+
+
+Realtime Reports about the Delivered Parcels.. 
+
+Realtime Map for the Couriers..
+
+Events to be tracked realtime
+
+Admin
+
+couriers
+1. When a parcel is delivered. -> ParcelDelivered
+
+
+
+2. Location of the courier in the map realtime..
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+TABLE FORMAT
+
+
+
+Parcels table
+
+-ID
+-Senior_Citizen_ID
+-medicine_dosage_id
+-quantity
+-courier_id of who will deliver..
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+Todo Tasks for today 
+
+
+
+
+[ ] See to it that the app is realtime / -> Research about Pusher / Socket.io in making it realtime.. 
+
+[ x ] Fix add user from admin side.. ===> ** if role is social-worker/2 then the barnagay_id is required.. * 
+
+otherwise if it is courier then role_id is not required.. 
+
+
+[ ] Deploy with Heroku . 
+
+[ ] Use Cloudinary with the photos / files . 
+
+[ ] Delete the dist folder after the new admin template is finished..
+
+
+[ x ] Change the favicon soon. 
+
+[ ] Merge the projects with earl through github..
+
+
+
+
+
+
+
+
+** December 11-beyond ** 
+
+How to solve tsp with directions api.
+
+------------------------------------------------------------------------------------------------------------------------------------
+( ISSUES ) UPDATED DAILY !!!
+
+Administrators modifications :  ==> Change to vue files..
+===============================================================================
+Showing the social workers page => Availability Modal shows.        [ Fixed !! ]
+
+Solution : Use vue in displaying the social workers / users. 
+Components would be : 		
+SocialWorkers.vue 		[ D O N E !!! ]
+Medicines.vue 			[ TO DO Dec.16,2017]
+Users.vue   			[ TO DO Dec.16,2017]
+Barangays.vue   [ TO DO Dec.16,2017]
+
+
+2. Edit functions not yet 
+3. View Functions
+
+============================================================================
+
+
+
+Couriers ISSUES  : 
+
+1. THe routes.js won't work .. Please check the internet for references.
+
+=> Check out routing in vue.js docu in devdocs.io and visit thelinks
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+Dashboard of the Courier Content
+===================================================================================
+>  Current Deliveries for Today ( Count ) 
+
+
+>  Number of parcels delivered this last week.  ===> Try to check Accounting.js for more.
+
+============================================================================v
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+By December : 
+
+First Week : 
+
+Courier Layout Finished by December 2. 2017
+
+Show the map for the today deliveries 
+SHow the map for pending Deliveries 
+Populate the pending deliveries. 
+
+
+
+Second Week : 
+
+
+
+
+
+[x] Create Home Page -> /
+
+
+You can use Vue.js here.	
+
+Views : (SPA)
+
+> Home
+Components : 
+[x]  Widget-Reports
+Todays Delivery 
+Components  : 
+=> Map with the controls inside it
+
+==================
+_________________	 	  |
+|				  |
+|				  |
+|				  | 
+|	 			  | 
+|			
+|				
+|=================
+
+
+
+------------------------------------------------------------------------------------------------
+
+Couriers : 
+
+
+
+
+
+Miscellaneous: 
+
+
+For learning vue.js
+1. Create a test app that 
+
+> Shows all the today's orders and upcoming ones and show it in the map..
+> Change the orders 
+
+
+
+
+
+
+
+
+
+#Mypharma is a web application that is built to simply automate the delivery and distribution of medicines in Cebu City, Philippines#
+=== App Flow === =
+
+
+
+Todo for today: Oct.18,2017
+
+issues :
+
+Pictures won't show in admin : /admin/medicines/listings 
+
+
+
+1. Seed the medicine_dosages willth their pictures..
+2. Plotting the location 
+=> show sweet alert ask if the user wants his location to be plotted or automatically checked.
+
+
+
+
+In couriers today's delivery page..
+
+Display the marker when the user plots it on a specific location..
+
+
+
+
+Courier workflow : 
+
+
+
+
+senior citizens_medicine_dosages in my table not included by earl.
+
+
+1. Senior_citizen_id.
+2. Medicine_dosage_id 
+3. Daily Frequency
+5. Courier_id => user_id
+6. Delivery_date
+7. Delivery_status => //undelivered, pending, delivered
+
+
+
+
+
+
+1. Make the administrator's side work	[ New work to do for august 2,2017..onward.]
+Task for today : 
+[x] Create a middleware for all the routes for the administrator
+[x]Test it 
+**Display views**
+[x] Display Users List
+[x] Display Modal for Editing the User
+[x] Show the Sweetalert for deleting the user
+[x] Make the Add User view List.
+[x] Add the user.. 
+[x] Display the social workers. 
+[x] Display the medicine inventory
+[x] Display the Barangays..
+[x] Delete the user
+[x] Update the user.. 
+[x] Store the medicine dosage..
+[] Display the page for showing a user's profile. 
+
+**Main Tasks**
+1. 
+
+**App functionalities:** 
+* _User Authentication and Authorization_
+1.  Elderlies/Clients will be registered by the social workers `(registration)`.
+2.  Authorization based on the credentials , therefore the redirection to their dashboard.
+
+*_Administrators Task _*
+
+[x]1. add messengers and social workers and assign them to a barangay. 
+[x]2. delete and edit app users.
+3. store,edit and delete medicines in the inventory.
+4. Store, delete barangays in the application[cannot edit].
+
+
+
+##System Tasks##
+1. All the elderlies will place their order in a certain week in the first week.
+2. After that week, the system will sort out the orders and deliver it based on the time the order was placed.=> First Come First Serve Basis
+3. The next week, starting monday the medicines will be delivered. 
+
+*_Automated Tasks _* 
+
+
+*_Semi Automated Tasks_* 
+1. Send SMS to a certain client.
+
+
+**Core_task**
+<!-- 1. Djistkra algorithm for the shortest route to the barangay hall/house of the senior citizen.  -->
+
+
+*Social_workers_tasks*
+
+=>Earl's task 
+
+_Messengers/Couriers Tasks_
+=======
+1. Check what he will deliver for that day : 
+2. 
+
+
+
+Couriers
+
+
+SPA-jquery
+State : Dashboard 
+
+Components : 
+
+Dashboard Page 
+
+1. Navigation Bar(TOP-NAV)
+top-left : page_title : Toda'ys Deliver(e.g)
+social media icons. 
+menu-bar[hamburger menu]
+
+
+2. Tabs
+contains the urls to be opened by
+-> Today's Deliveries
+-> Pending Deliveries
+
+
+
+
+2. Map
+
+He will place his current location....
+
+shows the markers for current days delivery.. and information details..
+
+=> Barangay halls are also placed by markers.
+
+=> Markers are placed in the current location in the map
+
+=> Once a marker is clicked in the current location, it will display these : 
+
+
+1. Confirm delivery. => SENDS SMS to the seniors mobile_phone 
+2. Show routes from the barangay hall..
+3. Show routes from your current location...
+4. Move to pending routes. 
+
+=> Every place should have a letter labeled. Consecutively based on the delivery. 
+A => Delivery 1
+B -> Delivery 2
+
+
+
+
+
+Eloquent Relationships: 	
+
+
+
+Users and Roles
+[x] 1. A user has one role.. A Role has Many User => One to Many
+
+Users and Barangays..
+[x] 2. A user belongs to a barangay. A barangay has many users. One to Many.. 
+
+Users and Users_informations
+[x] 3. A user has one information.. an information belongs to a user.. One to one
+
+Barangays and Cities
+[x] 4. A barangay belongs to a city.. A city has many barangay [uninclude].. One to many..
+
+Barangays and Senior Citizens
+[x] 5. A barangay has many senior_citizens. A senior citizen belongs to a barangay.. One to Many..
+
+
+Dosage and Medicines
+[x] 6. A dosage belongs to a medicine. A medicine has many dosages.. One to Many..
+
+Medicine and Medicine classes
+[x] 7. A medicine belongs To a class.. A medicine_class has many medicines... one to many..
+
+
+
+

@@ -1,0 +1,24 @@
+
+
+
+
+TASKS: 
+
+
+
+
+
+Center the user's map to the current location .
+
+
+Scheduled Tasks for Mypharma
+
+
+Test 
+
+
+
+Your medicines are delivered.. => (SMS Reminder)
+
+
+

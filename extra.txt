@@ -1,0 +1,239 @@
+Unneccessary Codes.. 
+
+
+LABELS : 
+1. Controllers 
+2. Function .. 
+3. Routes.
+
+
+
+
+
+
+
+
+
+
+
+
+[ 1 ] 
+
+
+
+
+    public function getDeliveriesForToday() {
+        $id = Auth::id();
+        return response($id);
+        // $this->showTodaysDelivery($user_id); 
+    }
+
+    public function todaysDelivery() {
+
+
+        // Get the currently authenticated users_id..
+        // Get his current location..[lat-lng] should be the starting location..
+        // $user_id = \Auth::user()->id ;   
+        // $this->showTodaysDelivery($user_id); 
+        // $myLocation = Parcel::where('delete()ivery_date','=',Carbon::now()); 
+        // $current_location = \Auth::user()->
+        // $deliveries =  SeniorCitizen
+        // $deliveries = SeniorCitizenMedicine::
+        // return $deliveries ;
+        // return view('courier.todays-deliveries');    
+        return view('courier.todays-delivery');
+        // return response()->json([
+        //      'user_id' => $user_id,
+        //      'courier_id' => $courier_id]) ; 
+        //  $start_location = User::join()      ;
+        //  return response()->json([$id, $courier_id]) ; 
+    }
+    
+    public function getUndeliveredOrders() {
+        $orders = $this->undeliveredOrders();
+        return view('orders')->with('orders', $orders);
+    }
+
+  public function testMap() {
+        return view('courier.test');
+    }
+
+    public function gmaps() {
+        return view('courier.gmaps');
+    }
+
+    public function pendingDeliveries() {
+        return view('courier.pending-deliveries');
+    }
+
+authenticatesusers.php
+
+
+
+    public function adminPostLogin(Request $request){
+        // $this->validateLogin($request); 
+
+        // // if ($this->attemptLogin($request)){ 
+
+
+        // //     $this->redirectTo(); 
+
+        // //     $role_id =  auth()->user()->role_id  ; 
+
+        // //     switch ($role_id) 
+        // //     {
+
+        // //         case 1: return redirect()->route('admin.dashboard') ; break ;
+
+        // //         default: return redirect()->back()->withInput()->withErrors($error => );
+
+        // //     }   
+        // // }
+
+
+
+        // // return redirect()->back()->withInput($request->only('email', 'remember'))->withErrors($errors);
+    }
+
+
+SMSController.php 
+
+
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\SeniorCitizenMedicine ; 
+use DB;  
+use Carbon\Carbon ;
+// use App\Filters\PackagesFilters ; 
+class SMSController extends Controller
+{
+
+public function getsTomorrowsParcelInformation(){
+$infos = DB::table('senior_citizen_medicines')
+->join('senior_citizens_rosters','senior_citizens_rosters.id','=','senior_citizen_medicines.senior_citizen_id')
+->select('senior_citizens_rosters.mobile_phone','senior_citizens_rosters.first_name','senior_citizens_rosters.last_name')
+->where('senior_citizen_medicines.delivery_date','=',Carbon::tomorrow('Asia/Manila')) ; 
+
+return $infos ; 
+
+}
+
+
+public function postSMS(){
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+[ 2 ]
+public function districts(){
+$districts = DB::table('districts')->get();  
+return response()->json($districts);
+}
+
+
+
+
+public function dashboard(){
+return view('dashboard');
+}
+
+
+public function tasks(){
+return view('pages.task');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+[ 3 ]
+
+
+
+// Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin'], function () {
+//     // Route::get('dashboard','AppController@dashboard');
+//     Route::get('dashboard', 'AdministratorController@renderDashboard')->name('admin/dashboard');
+//     Route::get('user/list', ['as' => 'showUsersList', 'uses' => 'AdministratorController@showAllUsers']);
+//     Route::get('user/social-workers', ['as' => 'showAllSocialWorkers', 'uses' => 'AdministratorController@showAllSocialWorkers']);
+//     Route::get('user/create', ['as' => 'showCreateUserForm', 'uses' => 'AdministratorController@showCreateUserForm']);
+//     Route::post('user/update', ['as' => 'updateUser', 'uses' => 'AdministratorController@updateUser']);
+//     Route::post('user/store', ['as' => 'storeUser',
+//         'uses' => 'AdministratorController@storeUser']);
+
+
+//     Route::post('user/delete', ['as' => 'deleteUser', 'uses' => 'AdministratorController@deleteUser']);
+
+
+
+// //medicine dosage routes
+//     Route::get('medicines/listings', 'AdministratorController@getMedicinesList')->name('medicines');
+//     Route::get('medicine/create', 'AdministratorController@createMedicineForm');
+//     Route::get('medicine/show/{id}', 'AdministratorController@showMedicine')->name('showDosage');
+//     Route::post('medicine/store', 'AdministratorController@storeDosage')->name('storeMedicine');
+//     Route::post('medicine/update', 'AdministratorController@updateDosage')->name('updateDosage');
+//     Route::post('medicine/delete', 'AdministratorController@deleteDosage');
+
+//     /*** Barangays **/
+//     Route::get('barangays/registered', 'AdministratorController@barangays');
+//     Route::get('barangay/register', 'AdministratorController@showBarangayForm');
+//     Route::post('barangay/store', ['as' => 'postBarangay',
+//         'uses' => 'AdministratorController@storeBarangay'
+//     ]);
+//     Route::delete('barangay/delete', 'AdministratorController@deleteBarangay');
+//     //Update Profile for administrators..
+//     Route::get('profile', 'AdministratorController@editForm');
+// });
+
+
+
+
+// }) ;
+
+// Route::get('user/list', ['as' => 'showUsersList', 'uses' => 'AdminController@showAllUsers']);
+// Route::get('user/social-workers', ['as' => 'showAllSocialWorkers', 'uses' => 'AdminController@showAllSocialWorkers']);
+// Route::get('user/create', ['as' => 'showCreateUserForm', 'uses' => 'AdminController@showCreateUserForm']);
+// Route::post('user/update', ['as' => 'updateUser', 'uses' => 'AdminController@updateUser']);
+// Route::post('user/store', ['as' => 'storeUser',
+//     'uses' => 'AdminController@storeUser']);
+
+
+// Route::post('user/delete', ['as' => 'deleteUser', 'uses' => 'AdminController@deleteUser']);
+
+
+
+// //medicine dosage routes
+// Route::get('medicines/listings', 'AdminController@getMedicinesList')->name('medicines');
+// Route::get('medicine/create', 'AdminController@createMedicineForm');
+// Route::get('medicine/show/{id}', 'AdminController@showMedicine')->name('showDosage');
+// Route::post('medicine/store', 'AdminController@storeDosage')->name('storeMedicine');
+// Route::post('medicine/update', 'AdminController@updateDosage')->name('updateDosage');
+// Route::post('medicine/delete', 'AdminController@deleteDosage');
+
+// /*** Barangays **/
+// Route::get('barangays/registered', 'AdminController@barangays');
+// Route::get('barangay/register', 'AdminController@showBarangayForm');
+// Route::post('barangay/store', ['as' => 'postBarangay',
+//     'uses' => 'AdminController@storeBarangay'
+// ]);
+// Route::delete('barangay/delete', 'AdminController@deleteBarangay');
+//     //Update Profile for administrators..
+// Route::get('profile', 'AdminController@editForm');
